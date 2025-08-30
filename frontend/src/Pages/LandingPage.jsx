@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LuSparkles } from "react-icons/lu";
-import HERO_IMG from "../assets/hero-img.png";
+import HERO_IMG from "../assets/hero.png";
 import { APP_FEATURES } from "../utils/data";
 import Modal from "../Components/Modal";
 import Login from "../Pages/Auth/Login";
