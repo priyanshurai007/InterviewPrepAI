@@ -1,39 +1,38 @@
-// frontend/src/api/urls.js => API paths
-// export const BASE_URL = "http://localhost:8000";
+// frontend/src/api/urls.js
 
-const hostname = window.location.hostname;
-
+// Base URL for backend API
 export const BASE_URL =
-  hostname === "localhost"
-    ? "http://localhost:8000"
-    : `http://${hostname}:8000`;
+  window.location.hostname === "localhost"
+    ? "http://localhost:8000" // Local development
+    : "https://interviewprepai-tf6v.onrender.com"; // Deployed backend on Render
 
+// API endpoints
 export const API_PATHS = {
   AUTH: {
-    REGISTER: "/api/auth/register", // Signup
-    LOGIN: "/api/auth/login", // Authenticate user & return JWT token
-    GET_PROFILE: "/api/auth/profile", // Get logged-in user details
+    REGISTER: `${BASE_URL}/api/auth/register`,
+    LOGIN: `${BASE_URL}/api/auth/login`,
+    GET_PROFILE: `${BASE_URL}/api/auth/profile`,
   },
 
   IMAGE: {
-    UPLOAD_IMAGE: "/api/auth/upload-image", // Upload profile picture
+    UPLOAD_IMAGE: `${BASE_URL}/api/auth/upload-image`,
   },
 
   AI: {
-    GENERATE_QUESTIONS: "/api/ai/generate-questions", // Generate interview questions and answers using Gemini
-    GENERATE_EXPLANATION: "/api/ai/generate-explanation", // Generate concept explanation using Gemini
+    GENERATE_QUESTIONS: `${BASE_URL}/api/ai/generate-questions`,
+    GENERATE_EXPLANATION: `${BASE_URL}/api/ai/generate-explanation`,
   },
 
   SESSION: {
-    CREATE: "/api/session/create", // Create a new interview session with questions
-    GET_ALL: "/api/session/my-sessions", // Get all user sessions
-    GET_ONE: (id) => `/api/session/${id}`, // Get session details with questions
-    DELETE: (id) => `/api/session/${id}`, // Delete a session
+    CREATE: `${BASE_URL}/api/session/create`,
+    GET_ALL: `${BASE_URL}/api/session/my-sessions`,
+    GET_ONE: (id) => `${BASE_URL}/api/session/${id}`,
+    DELETE: (id) => `${BASE_URL}/api/session/${id}`,
   },
 
   QUESTION: {
-    ADD_TO_SESSION: "/api/questions/add", // Add more questions to a session
-    PIN: (id) => `/api/questions/${id}/pin`, // Pin or Unpin a question
-    UPDATE_NOTE: (id) => `/api/questions/${id}/note`, // Update/Add a note to a question
+    ADD_TO_SESSION: `${BASE_URL}/api/questions/add`,
+    PIN: (id) => `${BASE_URL}/api/questions/${id}/pin`,
+    UPDATE_NOTE: (id) => `${BASE_URL}/api/questions/${id}/note`,
   },
 };
