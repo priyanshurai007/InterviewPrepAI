@@ -8,7 +8,7 @@ import { API_PATHS } from '../../utils/apiPaths';
 import { CARD_BG } from '../../utils/data';
 import moment from 'moment';
 import SummaryCard from '../../components/Cards/SummaryCard';
-import Modal from "../../Components/Modal";
+import Modal from "../../components/Modal";
 import CreateSessionForm from './CreateSessionForm';
 import DeleteAlertContent from '../../components/DeleteAlertContent';
 import toast from 'react-hot-toast';
@@ -65,7 +65,7 @@ function Dashboard() {
             questions = {data?.questions?.length || "-"} 
             description = {data?.description || ""} 
             lastUpdate={
-              data?.updatedAt ? moment(data.updateAt).format("DD MMM YYYY") : ""
+              data?.updatedAt ? moment(data.updatedAt).format("DD MMM YYYY") : ""
             }
             onSelect={() => navigate(`/interview-prep/${data?._id}`)}
             onDelete={() => setOpenDeleteAlert({open:true,data})}
@@ -92,7 +92,7 @@ function Dashboard() {
       </Modal>
       <Modal
       isOpen={openDeleteAlert?.open}
-      isClose={() => {
+      onClose={() => {
         setOpenDeleteAlert({open:false, data:null})
       }}
       title="Delete Alert"
