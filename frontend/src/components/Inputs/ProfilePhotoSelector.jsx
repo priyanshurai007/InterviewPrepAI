@@ -1,5 +1,6 @@
-import { div } from 'framer-motion/client';
+
 import {useState,useRef} from 'react'
+
 import {LuUser,LuUpload,LuTrash} from "react-icons/lu"
 
 function ProfilePhotoSelector({ image, setImage,preview,setPreview }) {
