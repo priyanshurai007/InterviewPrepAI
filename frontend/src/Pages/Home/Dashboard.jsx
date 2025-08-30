@@ -8,7 +8,7 @@ import { API_PATHS } from '../../utils/apiPaths';
 import { CARD_BG } from '../../utils/data';
 import moment from 'moment';
 import SummaryCard from '../../components/Cards/SummaryCard';
-import Modal from '../components/Modal'
+import Modal from '../components/Modal.jsx';
 import CreateSessionForm from './CreateSessionForm';
 import DeleteAlertContent from '../../components/DeleteAlertContent';
 import toast from 'react-hot-toast';
